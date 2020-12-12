@@ -1,0 +1,52 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Expense Calculator</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h2>These are the total of your expenses:</h2>-->
+<!--    {% for i in expenses%}-->
+<!--        <p>${{ i }}0</p>-->
+<!--    {% endfor %}-->
+
+<!--    <h2>Expense total by category:</h2>-->
+<!--    {% for e in expensesByCatergory%}-->
+<!--        <p>{{ e }}</p>-->
+<!--    {% endfor %}-->
+<!--    <p>-->
+<!--&lt;!&ndash;        <input type="submit" value="Add Expenses">&ndash;&gt;-->
+<!--        <a href={{ url_for('addExpenses') }}>Add Expense</a>-->
+<!--    </p>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+    <div class="flex-container w-container">
+      <div>
+        <h1>Add an expense</h1>
+        <a href="{{ url_for('addExpenses') }}" class="button-8 w-button">Add an Expense</a>
+      </div>
+    </div>
+  </header>
+<section id="feature-section" class="feature-section">
+    <div class="flex-container w-container">
+      <div>
+        <h2>Track your expenses</h2>
+            {% for i in expenses%}
+        <p>Your total amount of expenses is ${{ i }}0 USD</p>
+        {% endfor %}
+
+        <h2>By category</h2>
+            {% for e in expensesByCatergory%}
+        <p>{{ e }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

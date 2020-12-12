@@ -1,0 +1,82 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Add Expenses</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Add Your Expense</h1>-->
+<!--    <form action = "" method="POST" name = "sample">-->
+<!--        {{form.csrf_token}}-->
+<!--        {{form.hidden_tag()}}-->
+<!--        <a href={{ url_for('index') }}>Back to Homepage</a>-->
+<!--        <p>Description :-->
+<!--            {{form.description()}}-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--            Category:-->
+<!--            {{form.category()}}-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--            Cost:-->
+<!--            {{form.cost()}}-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--            Date:-->
+<!--            {{form.date()}}-->
+<!--        </p>-->
+
+<!--        <p>-->
+<!--                <input type="submit" value="Submit">-->
+
+<!--        </p>-->
+
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+{% extends "template.html" %}
+{% block content %}
+
+  <header id="hero" class="hero">
+      <a href="{{ url_for('index') }}" class="button-8 w-button">Back to Homepage</a>
+
+<br><br><br>
+    <div class="flex-container w-container">
+      <div>
+        <form method="post">
+        {{ form.csrf_token() }}
+                <p>Description :
+            {{form.description()}}
+        </p>
+
+        <p>
+            Category:
+            {{form.category()}}
+        </p>
+
+        <p>
+            Cost:
+            {{form.cost()}}
+        </p>
+
+        <p>
+            Currency:
+            {{form.currency}}
+        </p>
+
+        <p>
+            Date:
+            {{form.date()}}
+        </p>
+        <input value="Submit" class="button-8 w-button" type="submit">
+    </form>
+      </div>
+    </div>
+
+  </header>
+
+{% endblock %}
